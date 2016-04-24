@@ -6,9 +6,9 @@ import { addComment } from '../../actions/index'
 class CommentForm extends Component {
   static propTypes = {
     fields: PropTypes.object.isRequired,
+    addComment: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
-    resetForm: PropTypes.func.isRequired,
-    addComment: PropTypes.func.isRequired
+    resetForm: PropTypes.func.isRequired
   };
   render(){
     const {
@@ -48,11 +48,11 @@ class CommentForm extends Component {
         
         <button
           type="submit"
-          className="btn btn-primary" >
+          className="btn btn-success" >
           Submit
         </button>
         <button
-          className="btn btn-danger"
+          className="btn btn-info"
           onClick={resetForm}>
 
           Clear

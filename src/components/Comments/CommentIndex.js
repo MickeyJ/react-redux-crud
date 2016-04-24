@@ -10,7 +10,9 @@ import CommentList from './CommentList'
 
 class CommentIndex extends Component{
   static propTypes ={
-    comments: PropTypes.array.isRequired
+    comments: PropTypes.array.isRequired,
+    getComments: PropTypes.func.isRequired,
+    deleteComment: PropTypes.func.isRequired
   };
   componentWillMount(){
     this.props.getComments();

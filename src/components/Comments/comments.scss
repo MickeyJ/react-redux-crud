@@ -1,6 +1,10 @@
 
 #comment-box{
 
+  form{
+    margin-bottom: 3%;
+  }
+
   input{
     font-size: 23px;
   }
@@ -12,6 +16,10 @@
 
   .text-help{
     color: #ff5048;
+  }
+
+  .c-text{
+    margin-left: 5%;
   }
 
 }
