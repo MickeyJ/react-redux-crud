@@ -5,8 +5,8 @@ import {
   deleteComment
 } from '../../actions/'
 
-import CommentForm from './CommentForm'
-import CommentList from './CommentList'
+import CommentForm from './Form'
+import CommentList from './List'
 
 class CommentIndex extends Component{
   static propTypes ={

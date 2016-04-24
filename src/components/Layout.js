@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from './Header/Header'
-import CommentIndex from './Comments/CommentIndex'
+import CommentIndex from './Comments/Index'
 import Footer from './Footer/Footer'
 
 const Layout = () =>{
