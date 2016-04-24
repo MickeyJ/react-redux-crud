@@ -21,7 +21,7 @@ class CommentForm extends Component {
         <h3>Add New Comment</h3>
 
         <div className="form-group">
-          <label>Title</label>
+          <label>Name</label>
           <input 
             type="text" 
             className="form-control"
@@ -34,7 +34,7 @@ class CommentForm extends Component {
         </div>
 
         <div className="form-group">
-          <label>Categories</label>
+          <label>Comment</label>
           <input
             type="text"
             className="form-control"
