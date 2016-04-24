@@ -1,11 +1,10 @@
 import React from 'react'
 
-
-const Header = (props) =>{
+const Header = () =>{
   require('./header.scss');
   return(
     <header>
-      <h1>Redux Comments</h1>
+      <h1>Comments with Redux!</h1>
     </header>
   )
 };

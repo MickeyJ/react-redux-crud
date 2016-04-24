@@ -7,10 +7,15 @@ class CommentForm extends Component {
   static propTypes = {
     fields: PropTypes.object.isRequired,
     handleSubmit: PropTypes.func.isRequired,
+    resetForm: PropTypes.func.isRequired,
     addComment: PropTypes.func.isRequired
   };
   render(){
-    const { fields: {author, comment}, handleSubmit } = this.props;
+    const {
+      fields: {author, comment},
+      handleSubmit,
+      resetForm
+    } = this.props;
     return(
       <form onSubmit={handleSubmit(this.props.addComment)}>
         <h3>Add New Comment</h3>
@@ -19,9 +24,9 @@ class CommentForm extends Component {
           <label>Title</label>
           <input 
             type="text" 
-            className="form-control" 
+            className="form-control"
+            placeholder="Your Name"
             {...author}
-            value={author.value || ''}
           />
           <span className="text-help">
             {author.touched ? author.error : ''}
@@ -30,11 +35,11 @@ class CommentForm extends Component {
 
         <div className="form-group">
           <label>Categories</label>
-          <input 
-            type="text" 
-            className="form-control" 
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Your Comment"
             {...comment}
-            value={comment.value || ''}
           />
           <span className="text-help">
             {comment.touched ? comment.error : ''}
@@ -45,6 +50,12 @@ class CommentForm extends Component {
           type="submit"
           className="btn btn-primary" >
           Submit
+        </button>
+        <button
+          className="btn btn-danger"
+          onClick={resetForm}>
+
+          Clear
         </button>
       </form>
     )

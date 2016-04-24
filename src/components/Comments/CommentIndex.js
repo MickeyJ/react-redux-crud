@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { 
   getComments,
@@ -6,41 +6,27 @@ import {
 } from '../../actions/'
 
 import CommentForm from './CommentForm'
+import CommentList from './CommentList'
 
 class CommentIndex extends Component{
+  static propTypes ={
+    comments: PropTypes.array.isRequired
+  };
   componentWillMount(){
     this.props.getComments();
   }
   handleDelete(id){
     this.props.deleteComment(id);
   }
-  renderComments(){
-    return (
-      this.props.comments.map((x) =>(
-        <li className="list-group-item" key={x.id}>
-          <button
-            className="btn btn-info"
-            onClick={() => this.handleDelete(x.id)}>
-            X
-          </button>
-          <span className="pull-xs-right">{x.author}</span>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <span className="pull-xs-right">{x.comment}</span>
-            </li>
-          </ul>
-        </li>
-      ))
-    )
-  }
   render(){
     require('./comments.scss');
     return(
       <main id="comment-box">
         <CommentForm />
-        <ul className="list-group">
-          {this.renderComments()}
-        </ul>
+          <CommentList
+            comments={this.props.comments}
+            handleDelete={this.handleDelete.bind(this)}
+          />
       </main>
     )
   }

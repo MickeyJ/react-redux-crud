@@ -4,7 +4,7 @@ export const GET_COMMENTS = 'GET_COMMENTS';
 export const ADD_COMMENT= 'ADD_COMMENT';
 export const DELETE_COMMENT= 'DELETE_COMMENT';
 
-const API = '/comments';
+const API = 'http://localhost:3000/comments';
 
 export function getComments(){
   const request = axios.get(API);

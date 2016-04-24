@@ -2,8 +2,8 @@
 node_modules
 
 # -- To Deploy --
-public/bundle.js
+#public/bundle.js
 
 # -- To Develop --
-#webpack.config.js
-#src/*
+webpack.config.js
+src/*
