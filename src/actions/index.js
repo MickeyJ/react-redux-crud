@@ -29,5 +29,3 @@ export function deleteComment(id){
     payload: request
   }
 }
-
-

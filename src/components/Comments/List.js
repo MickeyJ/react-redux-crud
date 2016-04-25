@@ -1,10 +1,14 @@
 import React, { PropTypes } from 'react'
+import dateFormat from 'dateformat'
 
 const CommentList = props => (
   <ul className="list-group">
     {props.comments.map((x) =>(
       <li className="list-group-item" key={x.id}>
-        <span className="pull-xs-right"> - {x.author}</span>
+        <span className="pull-xs-right">{x.author}</span>
+        <span className="pull-xs-right c-date"> 
+          - {dateFormat(x.date, "h:MM tt")}
+        </span>
         <ul className="list-group">
           <li className="list-group-item">
             <button
