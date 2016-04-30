@@ -20,8 +20,3 @@ render(
   </Provider>,
   document.getElementById('react-app')
 );
-
-
-
-
-
