@@ -5,7 +5,7 @@ const DEV = process.env.NODE_ENV==='development';
 const wpConfig = {
   entry: './src/',
   output: {
-    path: __dirname +'/public',
+    path:  `${__dirname}/public`,
     filename: 'bundle.js'
   },
   devtool: DEV ? 'source-map' : null,
@@ -31,16 +31,12 @@ const wpConfig = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: [
-            'es2015', 
-            "stage-1", 
-            'react'
-          ]
+          presets: ['es2015', 'stage-1', 'react']
         }
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"],
+        test: /\.s?css/,
+        loaders: ['style', 'css', 'sass'],
         exclude: /node_modules/
       }
     ]

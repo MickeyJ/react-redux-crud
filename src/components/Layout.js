@@ -1,18 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Header from './Header/Header'
-import CommentIndex from './Comments/Index'
+import Comments from './Comments/Comments'
 import Footer from './Footer/Footer'
 
-const Layout = () =>{
-  require('../style/main.scss');
-  return(
-    <div id="layout">
-      <Header />
-      <CommentIndex />
-      <Footer />
-    </div>
-  )
-};
-
+const Layout = () =>(
+  <div id="layout">
+    <Header />
+    <Comments />
+    <Footer />
+  </div>
+);
 export default Layout

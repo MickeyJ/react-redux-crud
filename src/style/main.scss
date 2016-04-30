@@ -1,4 +1,8 @@
 @charset "UTF-8";
 
+@import "vendors/bootstrap";
 
-@import "common/layout";
+@import "../components/layout";
+@import "../components/Header/header";
+@import "../components/Comments/comments";
+@import "../components/Footer/footer";

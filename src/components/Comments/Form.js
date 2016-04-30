@@ -2,14 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import { addComment } from '../../actions/index'
 
-
 class CommentForm extends Component {
-  static propTypes = {
-    fields: PropTypes.object.isRequired,
-    addComment: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    resetForm: PropTypes.func.isRequired
-  };
   render(){
     const {
       fields: {author, comment},
@@ -46,21 +39,30 @@ class CommentForm extends Component {
           </span>
         </div>
         
-        <button
-          type="submit"
-          className="btn btn-success" >
-          Submit
-        </button>
-        <button
-          className="btn btn-info"
-          onClick={resetForm}>
+        <div className="btn-group">
+          <button
+            type="submit"
+            className="btn btn-success" >
+            Submit
+          </button>
 
-          Clear
-        </button>
+          <button
+            className="btn btn-info"
+            onClick={resetForm}>
+            Clear
+          </button>
+        </div>
       </form>
     )
   }
 }
+
+CommentForm.propTypes = {
+  fields: PropTypes.object.isRequired,
+  addComment: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  resetForm: PropTypes.func.isRequired
+};
 
 function validate(values){
   const errors = {};
@@ -75,8 +77,6 @@ function validate(values){
 
 export default reduxForm({
   form: 'CommentForm',
-  fields: [
-    'author', 'comment'
-  ],
+  fields: [ 'author', 'comment' ],
   validate
 }, null, {addComment})(CommentForm)

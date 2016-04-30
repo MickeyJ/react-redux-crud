@@ -4,11 +4,15 @@ export const GET_COMMENTS = 'GET_COMMENTS';
 export const ADD_COMMENT= 'ADD_COMMENT';
 export const DELETE_COMMENT= 'DELETE_COMMENT';
 
-const API = '/comments';
+const API = (
+  process.env.NODE_ENV==='development'
+    ? 'http://localhost:3000/comments'
+    : '/comments'
+);
 
 export function getComments(){
   const request = axios.get(API);
-  return{
+  return {
     type: GET_COMMENTS,
     payload: request
   };
@@ -16,7 +20,7 @@ export function getComments(){
 
 export function addComment(comment){
   const request = axios.post(API, comment);
-  return{
+  return {
     type: ADD_COMMENT,
     payload: request
   }
@@ -24,7 +28,7 @@ export function addComment(comment){
 
 export function deleteComment(id){
   const request = axios.delete(`${API}/${id}`);
-  return{
+  return {
     type: DELETE_COMMENT,
     payload: request
   }
