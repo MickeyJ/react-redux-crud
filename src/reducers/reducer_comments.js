@@ -13,7 +13,7 @@ export default function(state = INITIAL_STATE, action){
       return { ...state, all: action.payload.data};
     
     case ADD_COMMENT:
-      return { all: [action.payload.data[0], ...state.all]};
+      return { all: [ action.payload.data[0], ...state.all ] };
     
     case DELETE_COMMENT:
       return { ...state, all: state.all.filter(x => (

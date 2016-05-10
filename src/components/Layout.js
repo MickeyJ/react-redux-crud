@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Header from './Header/Header'
-import Comments from './Comments/Comments'
+import Comments from './Comments/CommentIndex'
 import Footer from './Footer/Footer'
 
 const Layout = () =>(

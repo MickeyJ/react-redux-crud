@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import {getComments, deleteComment} from '../../actions/'
 
-import CommentForm from './Form'
-import CommentList from './List'
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
 
 class CommentIndex extends Component{
   componentWillMount(){
